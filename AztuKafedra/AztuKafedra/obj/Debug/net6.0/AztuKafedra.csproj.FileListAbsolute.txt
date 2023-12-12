@@ -28,3 +28,4 @@ C:\Users\sahin\Desktop\KafedraAztuFrontBack\AztuKafedra\AztuKafedra\obj\Debug\ne
 C:\Users\sahin\Desktop\KafedraAztuFrontBack\AztuKafedra\AztuKafedra\obj\Debug\net6.0\AztuKafedra.pdb
 C:\Users\sahin\Desktop\KafedraAztuFrontBack\AztuKafedra\AztuKafedra\obj\Debug\net6.0\AztuKafedra.genruntimeconfig.cache
 C:\Users\sahin\Desktop\KafedraAztuFrontBack\AztuKafedra\AztuKafedra\obj\Debug\net6.0\ref\AztuKafedra.dll
+C:\Users\sahin\Desktop\KafedraAztuFrontBack\AztuKafedra\AztuKafedra\obj\Debug\net6.0\AztuKafedra.sourcelink.json

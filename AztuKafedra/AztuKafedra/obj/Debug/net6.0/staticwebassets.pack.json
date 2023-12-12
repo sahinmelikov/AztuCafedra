@@ -49,6 +49,14 @@
       "PackagePath": "staticwebassets\\KafedraAssets\\assets\\ed3a6040\\yii2-pdfjs.js"
     },
     {
+      "Id": "C:\\Users\\sahin\\Desktop\\KafedraAztuFrontBack\\AztuKafedra\\AztuKafedra\\wwwroot\\KafedraAssets\\cdn.jsdelivr.net\\npm\\bootstrap@5.0.0-beta2\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\KafedraAssets\\cdn.jsdelivr.net\\npm\\bootstrap@5.0.0-beta2\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\sahin\\Desktop\\KafedraAztuFrontBack\\AztuKafedra\\AztuKafedra\\wwwroot\\KafedraAssets\\cdnjs.cloudflare.com\\ajax\\libs\\popper.js\\1.12.9\\umd\\popper.min.js",
+      "PackagePath": "staticwebassets\\KafedraAssets\\cdnjs.cloudflare.com\\ajax\\libs\\popper.js\\1.12.9\\umd\\popper.min.js"
+    },
+    {
       "Id": "C:\\Users\\sahin\\Desktop\\KafedraAztuFrontBack\\AztuKafedra\\AztuKafedra\\wwwroot\\KafedraAssets\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\KafedraAssets\\css\\bootstrap.css"
     },
@@ -203,6 +211,10 @@
     {
       "Id": "C:\\Users\\sahin\\Desktop\\KafedraAztuFrontBack\\AztuKafedra\\AztuKafedra\\wwwroot\\KafedraAssets\\releases\\v5.10.0\\css\\all.css",
       "PackagePath": "staticwebassets\\KafedraAssets\\releases\\v5.10.0\\css\\all.css"
+    },
+    {
+      "Id": "C:\\Users\\sahin\\Desktop\\KafedraAztuFrontBack\\AztuKafedra\\AztuKafedra\\wwwroot\\KafedraAssets\\stackpath.bootstrapcdn.com\\bootstrap\\4.3.1\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\KafedraAssets\\stackpath.bootstrapcdn.com\\bootstrap\\4.3.1\\js\\bootstrap.min.js"
     },
     {
       "Id": "C:\\Users\\sahin\\Desktop\\KafedraAztuFrontBack\\AztuKafedra\\AztuKafedra\\wwwroot\\css\\site.css",
