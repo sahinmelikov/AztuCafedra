@@ -1,5 +1,9 @@
-﻿using AztuKafedra.Models;
+﻿using AztuKafedra.DAL;
+using AztuKafedra.Models;
+using AztuKafedra.Services;
+using AztuKafedra.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace AztuKafedra.Controllers
@@ -7,15 +11,23 @@ namespace AztuKafedra.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AppDbContext _appDbContext;
+        private readonly HomeService _homeService;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        public HomeController(ILogger<HomeController> logger, AppDbContext appDbContext, HomeService homeService)
         {
             _logger = logger;
+            _appDbContext = appDbContext;
+            _homeService = homeService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var homeVm = _homeService.GetHomeData();
+            return View(homeVm);
+
+
         }
 
         public IActionResult Privacy()
