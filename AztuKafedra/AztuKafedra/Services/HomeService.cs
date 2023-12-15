@@ -19,15 +19,43 @@ namespace AztuKafedra.Services
             var bigParentsCategories = _db.BigParentsCategory
                 .Include(bp => bp.ParentCategories)
                     .ThenInclude(pc => pc.ChildCategories)
+                    .ThenInclude(cc => cc.Users) // Users özelliğini yükle
                 .ToList();
 
             var homeVm = new HomeVM
             {
-                BigParentsCategories = bigParentsCategories
-                // Diğer HomeVm alanlarını da doldurabilirsiniz
+                BigParentsCategories = bigParentsCategories,
+                ChildCategories = _db.ChildCategory.Include(d => d.ParentCategory).Include(cc => cc.Users).ToList(),
+                ParentCategories = _db.Parentcategory.ToList(),
             };
 
             return homeVm;
         }
+
+        public HomeVM GetHomeDataForChildCategory(int childCategoryId)
+        {
+            var bigParentsCategories = _db.BigParentsCategory
+                .Include(bp => bp.ParentCategories)
+                    .ThenInclude(pc => pc.ChildCategories)
+                .ToList();
+
+            var homeVm = new HomeVM
+            {
+                BigParentsCategories = bigParentsCategories,
+                ChildCategories = _db.ChildCategory
+                    .Include(d => d.ParentCategory)
+                    .Include(c => c.Users) // Users özelliğini yükle
+                    .ToList(),
+                ParentCategories = _db.Parentcategory.ToList(),
+                // Seçilen ChildCategory'ye özgü verileri ekleyin
+                SelectedChildCategory = _db.ChildCategory
+                    .Include(c => c.Users) // Users özelliğini yükle
+                    .FirstOrDefault(c => c.Id == childCategoryId)
+            };
+
+            return homeVm;
+        }
+
+
     }
 }

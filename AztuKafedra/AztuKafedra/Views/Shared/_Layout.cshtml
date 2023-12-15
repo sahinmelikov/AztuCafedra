@@ -197,28 +197,27 @@
 
                     <div class="collapse navbar-collapse" id="main_nav">
                         <ul class="navbar-nav mx-auto">
-                            @foreach (var item in Model.BigParentsCategories)
+                            @foreach (var bigParentsCategory in Model.BigParentsCategories)
                             {
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle show" href="#" data-bs-toggle="dropdown" style="color: #ffffff!important;font-size: 18px!important;">@item.Name </a>
+                                    <a class="nav-link dropdown-toggle show" href="#" data-bs-toggle="dropdown" style="color: #ffffff!important; font-size: 18px!important;">@bigParentsCategory.Name</a>
                                     <ul class="dropdown-menu">
-                                        <li>
-                                            @foreach (var item1 in item.ParentCategories)
-                                            {
-                                                <a class="dropdown-item" href="#" style="font-size: 18px;display: flex;flex-direction: row;justify-content: space-between;align-items: center;"> &nbsp; @item1.Name&nbsp;&nbsp;&nbsp;<i style="font-weight:normal;" class="fas fa-angle-right"></i> </a>
+                                        @foreach (var parentCategory in bigParentsCategory.ParentCategories)
+                                        {
+                                            <li>
+                                                <a class="dropdown-item" href="#" style="font-size: 18px; display: flex; flex-direction: row; justify-content: space-between; align-items: center;"> &nbsp; @parentCategory.Name &nbsp;&nbsp;&nbsp;<i style="font-weight:normal;" class="fas fa-angle-right"></i> </a>
                                                 <ul class="submenu dropdown-menu">
-                                                    @foreach (var item2 in item1.ChildCategories)
+                                                    @foreach (var childCategory in parentCategory.ChildCategories)
                                                     {
-                                                        <li><a class="dropdown-item" href="news/72/institut-yangiliklari.html">@item2.Name</a></li>
+                                                        <li><a class="dropdown-item" href="news/72/institut-yangiliklari.html">@childCategory.Name</a></li>
                                                     }
                                                 </ul>
-                                            }
-                                        </li>
+                                            </li>
+                                        }
                                     </ul>
                                 </li>
                             }
                         </ul>
-
 
                     </div> <!-- navbar-collapse.// -->
                 </nav>

@@ -29,6 +29,19 @@ namespace AztuKafedra.Controllers
 
 
         }
+        public IActionResult Fakulteler(int id)
+        {
+            // İlgili ChildCategory'yi bulun
+            var childCategory = _appDbContext.ChildCategory.Include(c => c.ParentCategory).Include(d=>d.Users).FirstOrDefault(c => c.Id == id);
+
+            if (childCategory == null)
+            {
+                return NotFound();
+            }
+
+            var homeVm = _homeService.GetHomeDataForChildCategory(id);
+            return View(homeVm);
+        }
 
         public IActionResult Privacy()
         {

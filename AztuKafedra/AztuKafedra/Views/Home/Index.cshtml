@@ -1,4 +1,6 @@
-﻿<section class="header">
+﻿@using AztuKafedra.ViewModel
+@model HomeVM
+<section class="header">
 <div class="swiper-container mySwiper">
     <div class="swiper-wrapper">
         <div class="swiper-slide " style=" background-image: url(uploads/img/corusel/GM%20corusel.jpg);">
@@ -219,52 +221,30 @@
 <section class="fakultetlar">
     <div class="container">
         <div class="fak-title">
+         
             <h2 style="text-transform: uppercase;">Fakültələr</h2>
         </div>
         <div class="w-100 swiper-container mySwiper2">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="card w-100">
-                        <div class="card-head">
-                            <div class="overlay-card">
-                                <a href="faculty/17/davolash-ishi.html"
-                                   class="btn btn-more">Daha Cox</a>
+                @foreach (var item in Model.ChildCategories.Where(x => x.ParentCategory.Name == "Fakültələr"))
+                {
+                    <div class="swiper-slide">
+                        <div class="card w-100">
+                            <div class="card-head">
+                                <div class="overlay-card">
+                                    <a asp-route-id="@item.Id" asp-controller="Home" asp-action="Fakulteler" class="btn btn-more">Daha Cox</a>
+                                </div>
+                                <img src="" alt="" class="card-img-top">
                             </div>
-                            <img src="uploads/img/fakultet/Davolash%20ishi/%d0%bb%d0%be%d0%b3%d0%be%20%d0%bb%d0%b5%d1%87%d0%b5%d0%b1%d0%bd%d0%be%d0%b5.png" alt="" class="card-img-top">
+                        </div>
+                        <div class="card-body w-100">
+                            <h4 class="text-center">@item.Name</h4>
                         </div>
                     </div>
-                    <div class="card-body w-100">
-                        <h4 class="text-center">Davolash ishi</h4>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card w-100">
-                        <div class="card-head">
-                            <div class="overlay-card">
-                                <a href="faculty/17/tibbiy-profilaktika-va-jamoat-salomatligi-fakulteti.html"
-                                   class="btn btn-more">Daha Cox</a>
-                            </div>
-                            <img src="uploads/img/fakultet/tibbbiy/kaTv5j4aJXg.jpg" alt="" class="card-img-top">
-                        </div>
-                    </div>
-                    <div class="card-body w-100">
-                        <h4 class="text-center">Tibbiy profilaktika va jamoat salomatligi fakulteti</h4>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card w-100">
-                        <div class="card-head">
-                            <div class="overlay-card">
-                                <a href="faculty/17/xalqaro-fakultet.html"
-                                   class="btn btn-more">Daha Cox</a>
-                            </div>
-                            <img src="uploads/img/fakultet/xalqaro/unnamed.png" alt="" class="card-img-top">
-                        </div>
-                    </div>
-                    <div class="card-body w-100">
-                        <h4 class="text-center">Xalqaro fakultet</h4>
-                    </div>
-                </div>
+                }
+
+           
+             
             </div>
         </div>
     </div>
